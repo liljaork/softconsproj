@@ -7,12 +7,9 @@ public class Book {
     private String title;
     private List<Author> authors;
     
-    public Book(String title, String authorName) throws EmptyAuthorListException {
+    public Book(String title, String authorName) {
         this.title = title;
         this.authors = new ArrayList<>();
-        if (authorName.isEmpty()) {
-            throw new EmptyAuthorListException("Author name cannot be empty");
-        }
         this.authors.add(new Author(authorName));
     }
 
