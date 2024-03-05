@@ -13,6 +13,6 @@ public class Student extends User {
     }
 
     public void setFeePaid(boolean feePaid) {
-        this.feePaid = true;
+        this.feePaid = feePaid;
     }
 }
