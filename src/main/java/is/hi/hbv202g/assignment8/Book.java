@@ -10,7 +10,7 @@ public class Book {
     public Book(String title, String authorName) throws EmptyAuthorListException {
         this.title = title;
         this.authors = new ArrayList<>();
-        if (authorName == null || authorName.isEmpty()) {
+        if (authorName.isEmpty()) {
             throw new EmptyAuthorListException("Author name cannot be empty");
         }
         this.authors.add(new Author(authorName));
