@@ -1,4 +1,4 @@
-package is.hi.hbv202g.assignment8;
+package is.hi.hbv202g.softconsproj;
 
 public abstract class User {
     String name;

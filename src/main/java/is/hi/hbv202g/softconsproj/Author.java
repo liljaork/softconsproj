@@ -1,4 +1,4 @@
-package is.hi.hbv202g.assignment8;
+package is.hi.hbv202g.softconsproj;
 
 public class Author {
     private String name;
