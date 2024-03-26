@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>HBV202G Softconsproj</name>
+    <url>https://github.com/liljaork/softconsproj.git</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
