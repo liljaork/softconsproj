@@ -2,7 +2,7 @@ package is.hi.hbv202g.softconsproj;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Omnibus {
+public class Omnibus implements LibraryItem {
     private String nafnaBok;
 
     public Omnibus(String nafnaBok){
