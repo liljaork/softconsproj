@@ -141,7 +141,7 @@ public class LibrarySystem {
      * @param book
      * @return lending
      */
-    private Lending findLending(User user, Book book) {
+    public Lending findLending(User user, Book book) {
         for (Lending lending : lendings) {
             if (lending.getUser().equals(user) && lending.getBook().equals(book)) {
                 return lending;
