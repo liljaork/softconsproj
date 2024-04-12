@@ -88,8 +88,7 @@ public class Book implements LibraryItem {
     }
 
     // LibraryItem kallar á þetta:
-    public boolean clean(Book book) {
+    public void clean(Book book) {
         setCleaning(book);
-        return getCleaning(book);
     }
 }
