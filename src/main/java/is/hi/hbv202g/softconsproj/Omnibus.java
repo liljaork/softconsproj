@@ -37,9 +37,9 @@ public class Omnibus implements LibraryItem {
     }
 
     /* 
-    public List<Book> leigjaBaekur() throws UserOrBookDoesNotExistException{
+    public List<Book> leigjaBaekur(String nafnaBok) throws UserOrBookDoesNotExistException{
 
-        while (){
+        while (nafnaBok : <Book>){
             findBookByTitle(nafnaBok);
         }
         

@@ -7,6 +7,7 @@ public class Book implements LibraryItem {
     //Tilviksbreytur
     private String title;
     private List<Author> authors;
+    private boolean cleaning;
     
     /**
      * Smiður sem tekur inn title og authorName og bætir nýjum Author við listann authors
@@ -17,6 +18,7 @@ public class Book implements LibraryItem {
         this.title = title;
         this.authors = new ArrayList<>();
         this.authors.add(new Author(authorName));
+        this.cleaning = false;
     }
 
     /**
@@ -77,4 +79,17 @@ public class Book implements LibraryItem {
         this.title = title;
     }
 
+    public void setCleaning(Book book){
+        this.cleaning = true;
+    }
+
+    public boolean getCleaning(Book book){
+        return cleaning;
+    }
+
+    // LibraryItem kallar á þetta:
+    public boolean clean(Book book) {
+        setCleaning(book);
+        return getCleaning(book);
+    }
 }
