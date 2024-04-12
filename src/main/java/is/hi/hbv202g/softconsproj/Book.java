@@ -79,8 +79,8 @@ public class Book implements LibraryItem {
         this.title = title;
     }
 
-    public void setCleaning(Book book){
-        this.cleaning = true;
+    public void setCleaning(boolean cleaningStatus){
+        this.cleaning = cleaningStatus;
     }
 
     public boolean getCleaning(Book book){
@@ -88,8 +88,8 @@ public class Book implements LibraryItem {
     }
 
     // LibraryItem kallar á þetta:
-    public void clean(Book book) {
-        setCleaning(book);
+    public void clean() {
+        setCleaning(true);
     }
     
 }
