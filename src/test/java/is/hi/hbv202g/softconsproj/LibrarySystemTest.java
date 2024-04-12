@@ -19,13 +19,13 @@ public class LibrarySystemTest {
     }
 
     @Test
-    public void testAddBookWithTitleAndNameOfSingleAuthor() {
+    public void testAddBookWithTitleAndNameOfSingleAuthor() throws UserOrBookDoesNotExistException{
         librarySystem.addBookWithTitleAndNameOfSingleAuthor("Title", "Author");
         assertNotNull(librarySystem.findBookByTitle("Title"));
     }
 
     @Test
-    public void testAddBookWithTitleAndAuthorList() throws EmptyAuthorListException {
+    public void testAddBookWithTitleAndAuthorList() throws EmptyAuthorListException, UserOrBookDoesNotExistException{
         List<Author> authors = new ArrayList<>();
         authors.add(new Author("Author"));
         librarySystem.addBookWithTitleAndAuthorList("Title", authors);
@@ -33,13 +33,13 @@ public class LibrarySystemTest {
     }
 
     @Test
-    public void testAddStudentUser() {
+    public void testAddStudentUser() throws UserOrBookDoesNotExistException {
         librarySystem.addStudentUser("Student", true);
         assertNotNull(librarySystem.findUserByName("Student"));
     }
 
     @Test
-    public void testAddFacultyMemberUser() {
+    public void testAddFacultyMemberUser() throws UserOrBookDoesNotExistException {
         librarySystem.addFacultyMemberUser("Faculty", "Department");
         assertNotNull(librarySystem.findUserByName("Faculty"));
     }
