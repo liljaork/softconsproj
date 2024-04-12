@@ -1,5 +1,8 @@
 package is.hi.hbv202g.softconsproj;
 
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,11 +11,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class LibrarySystemTest {
-    /*
-    private List<Book> books;
-    private List<User> users;
-    private List<Lending> lendings;
-    */
     private LibrarySystem librarySystem;
 
     @Before
@@ -133,22 +131,4 @@ public class LibrarySystemTest {
         librarySystem.addBookWithTitleAndNameOfSingleAuthor("Title1", "Author1");
         librarySystem.extendLending(facultyMember, book, LocalDate.now().plusWeeks(1));
     }
-
-    /*
-    addBookWithTitleAndNameOfSingleAuthor(String title, String authorName);
-    addBookWithTitleAndAuthorList(String title, List<Author> authors);
-    addStudentUser(String name, boolean feePaid);
-    addFacultyMemberUser(String name, String department);
-    borrowBook(User user, Book book);
-    extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate);
-    returnBook(User user, Book book);
-    */
-
-    // Setja inn findBookByTitle, findUserByName og findLending.. 
-    // Erum samt að nota það allstaðar þannig spurning hvort það þurfi
-    /*
-    findBookByTitle(String title);
-    findUserByName(String name);
-    findLending(User user, Book book);
-    */
 }
