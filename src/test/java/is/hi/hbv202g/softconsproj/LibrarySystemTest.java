@@ -90,7 +90,7 @@ public class LibrarySystemTest {
         librarySystem.borrowBook(user, book);
         librarySystem.returnBook(user, book);
 
-        assertFalse(librarySystem.findUserByName("Student").getBooks().contains(book));
+        assertNotNull(librarySystem.findLending(user,book));;
     }
 
 
