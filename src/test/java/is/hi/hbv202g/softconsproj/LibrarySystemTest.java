@@ -44,7 +44,7 @@ public class LibrarySystemTest {
         assertNotNull(librarySystem.findUserByName("Faculty"));
     }
 
-    // TODO - búa til getBooks() sem virkar eða eitthvað annað?
+    // TODO - finna lending sem er með user og book inní
     @Test
     public void testBorrowBook() throws UserOrBookDoesNotExistException {
         User user = new Student("Student", true);
@@ -54,7 +54,7 @@ public class LibrarySystemTest {
         librarySystem.addBookWithTitleAndNameOfSingleAuthor("Title", "Author");
         librarySystem.borrowBook(user, book);
 
-        assertTrue(librarySystem.findUserByName("Student").getBooks().contains(book));
+        assertNotNull(librarySystem.findLending(user,book));
     }
 
     // TODO - skoða þetta: 
@@ -74,7 +74,7 @@ public class LibrarySystemTest {
         // Extend the lending
         LocalDate newDueDate = LocalDate.now().plusWeeks(1);
         librarySystem.extendLending(facultyMember, book, newDueDate);
-    
+        
         // Check if the due date has been updated correctly
         assertEquals(newDueDate, librarySystem.findLending(facultyMember, book).getDueDate());
     }
@@ -93,8 +93,9 @@ public class LibrarySystemTest {
         assertFalse(librarySystem.findUserByName("Student").getBooks().contains(book));
     }
 
-    // Auka Test fyrir aðra hluti sem geta gerst: 
 
+
+    // Auka Test fyrir aðra hluti sem geta gerst: 
 
     @Test(expected = UserOrBookDoesNotExistException.class)
     public void testFindNonexistentBook() throws UserOrBookDoesNotExistException {
