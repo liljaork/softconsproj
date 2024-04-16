@@ -4,10 +4,8 @@ import java.util.List;
 
 public class Omnibus implements LibraryItem {
     private List<LibraryItem> books = new ArrayList<LibraryItem>();
-    private String nafnaBok;
-
-    public Omnibus(String nafnaBok){
-        this.nafnaBok= nafnaBok;
+    
+    public Omnibus() {
     }
 
     public void clean() {
@@ -26,25 +24,5 @@ public class Omnibus implements LibraryItem {
 
     public List<LibraryItem> getBooks() {
         return books;
-    }
-
-    public String getNafnaBok(){
-        return nafnaBok;
-    }
-
-    public void setNafnaBok(String nafnaBok){
-        this.nafnaBok= nafnaBok;
-    }
-
-    /* 
-    public List<Book> leigjaBaekur(String nafnaBok) throws UserOrBookDoesNotExistException{
-
-        while (nafnaBok : <Book>){
-            findBookByTitle(nafnaBok);
-        }
-        
-    }
-    */
-
-    
+    } 
 }

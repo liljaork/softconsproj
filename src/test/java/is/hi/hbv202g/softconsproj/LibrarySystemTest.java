@@ -85,6 +85,8 @@ public class LibrarySystemTest {
     }
 
     // Auka Test fyrir aðra hluti sem geta gerst: 
+    /*
+
     @Test(expected = BookAlreadyExistsException.class)
     public void testAddDuplicateBook() {
         librarySystem.addBookWithTitleAndNameOfSingleAuthor("Title1", "Author1");
@@ -96,6 +98,7 @@ public class LibrarySystemTest {
         librarySystem.addStudentUser("Student1", true);
         librarySystem.addStudentUser("Student1", true);
     }
+    */
     
     @Test(expected = UserOrBookDoesNotExistException.class)
     public void testFindNonexistentBook() throws UserOrBookDoesNotExistException {

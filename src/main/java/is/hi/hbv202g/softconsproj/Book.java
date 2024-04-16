@@ -8,12 +8,10 @@ public class Book implements LibraryItem {
     private String title;
     private List<Author> authors;
     private boolean cleaning;
+
+    public Book() {
+    }
     
-    /**
-     * Smiður sem tekur inn title og authorName og bætir nýjum Author við listann authors
-     * @param title
-     * @param authorName
-     */
     public Book(String title, String authorName) {
         this.title = title;
         this.authors = new ArrayList<>();
@@ -21,12 +19,6 @@ public class Book implements LibraryItem {
         this.cleaning = false;
     }
 
-    /**
-     * Smiður sem tekur inn title og authorList og bætir nýjum Author við listann authors
-     * @param title
-     * @param authors
-     * @throws EmptyAuthorListException
-     */
     public Book(String title, List<Author> authors) throws EmptyAuthorListException {
         this.title = title;
         if (authors == null || authors.isEmpty()) {
@@ -35,19 +27,10 @@ public class Book implements LibraryItem {
         this.authors = authors;
     }
 
-    /**
-     * Getter fyrir authors
-     * @return authors
-     */
     public List<Author> getAuthors() {
         return authors;
     }
 
-    /**
-     * Setter fyrir authors
-     * @param authors
-     * @throws EmptyAuthorListException
-     */
     public void setAuthors(List<Author> authors) throws EmptyAuthorListException {
         if (authors == null || authors.isEmpty()) {
             throw new EmptyAuthorListException("Author list cannot be empty");
@@ -55,26 +38,14 @@ public class Book implements LibraryItem {
         this.authors = authors;
     }
 
-    /**
-     * Aðferð sem bætir nýjum Author við listann authors
-     * @param author
-     */
     public void addAuthor(Author author) {
         this.authors.add(author);
     }
 
-    /**
-     * Getter fyrir title
-     * @return title
-     */
     public String getTitle() {
         return title;
     }
 
-    /**
-     * Setter fyrir title
-     * @param title
-     */
     public void setTitle(String title) {
         this.title = title;
     }
@@ -86,8 +57,7 @@ public class Book implements LibraryItem {
     public boolean getCleaning(Book book){
         return cleaning;
     }
-
-    // LibraryItem kallar á þetta:
+    
     public void clean() {
         setCleaning(true);
     }

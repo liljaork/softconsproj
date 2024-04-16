@@ -10,6 +10,12 @@
 
     <name>HBV202G Softconsproj</name>
     <url>https://github.com/liljaork/softconsproj.git</url>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>LICENSE</url>
+        </license>
+    </licenses>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -85,4 +91,15 @@
             </plugin>
         </plugins>
     </build>
+    
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.6.3</version>
+            </plugin>
+        </plugins>
+    </reporting>
 </project>
