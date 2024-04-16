@@ -4,7 +4,7 @@ public abstract class User {
     //Tilviksbreyta
     String name;
 
-    //Smiður sem tekur inn name
+    // Smiður
     public User(String name){
         this.name = name;
     }
