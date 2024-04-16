@@ -22,14 +22,11 @@ public class BookTest {
         assertTrue(book.getAuthors().contains(author));
     }
 
-    // Bætti svo þessu við til að hafa önnur test:
-    // IllegalArgumentException klasinn er núþegar partur af java :))
     @Test(expected = IllegalArgumentException.class)
     public void testAddNullAuthor() {
         book.addAuthor(null);
     }
     
-    // TODO - þarf að hafa sér klasa? eða má ég bara bæta við Book.java?
     @Test
     public void testSetNullAuthorsList() {
         assertThrows(EmptyAuthorListException.class, () -> {

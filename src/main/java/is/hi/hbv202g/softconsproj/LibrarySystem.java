@@ -9,7 +9,7 @@ public class LibrarySystem {
     private List<User> users;
     private List<Lending> lendings;
 
-    // Getterar og smiður
+    
     public List<Book> getBooks() {
         return books;
     }
@@ -28,24 +28,13 @@ public class LibrarySystem {
         this.lendings = new ArrayList<>();
     }
 
-    // Aðferðir
-
-    /**
-     * Aðferð sem bætir nýrri bók með title og authorName við listann books
-     * @param title
-     * @param authorName
-     */
+    
     public void addBookWithTitleAndNameOfSingleAuthor(String title, String authorName){
         Book newBook = new Book(title, authorName);
         books.add(newBook);
     }
 
-    /**
-     * Aðferð sem bætir nýrri bók með title og authors við listann books
-     * @param title
-     * @param authors
-     * @throws EmptyAuthorListException ef authors listinn er tómur
-     */
+    
     public void addBookWithTitleAndAuthorList(String title, List<Author> authors) throws EmptyAuthorListException {
         if (authors == null || authors.isEmpty()) {
             throw new EmptyAuthorListException("Author list cannot be empty");
@@ -54,30 +43,16 @@ public class LibrarySystem {
         books.add(newBook);
     }
 
-    /**
-     * Aðferð sem bætir nýjum nemanda við listann users
-     * @param name
-     * @param feePaid
-     */
+  
     public void addStudentUser(String name, boolean feePaid) {
         users.add(new Student(name, feePaid));
     }
 
-    /**
-     * Aðferð sem bætir við nýjum faculty member við listann users
-     * @param name
-     * @param department
-     */
+    
     public void addFacultyMemberUser(String name, String department) {
         users.add(new FacultyMember(name, department));
     }
 
-    /**
-     * Aðferð sem finnur bók með titli bókarinnar
-     * @param title
-     * @return book
-     * @throws UserOrBookDoesNotExistException ef bók með titlinum finnst ekki 
-     */
     public Book findBookByTitle(String title) throws UserOrBookDoesNotExistException {
         for (Book book : books) {
             if (book.getTitle().equals(title)) {
@@ -87,12 +62,7 @@ public class LibrarySystem {
         throw new UserOrBookDoesNotExistException("Book with title '" + title + "' does not exist");
     }
 
-    /**
-     * Aðferð sem finnur notanda 
-     * @param name
-     * @return user
-     * @throws UserOrBookDoesNotExistException ef notandi með ákveðið nafn finnst ekki
-     */
+  
     public User findUserByName(String name) throws UserOrBookDoesNotExistException {
         for (User user : users) {
             if (user.getName().equals(name)) {
@@ -102,12 +72,7 @@ public class LibrarySystem {
         throw new UserOrBookDoesNotExistException("User with name '" + name + "' does not exist");
     }
     
-    /**
-     * Aðferð sem lánar út bók
-     * @param user
-     * @param book
-     * @throws UserOrBookDoesNotExistException ef notandi eða bók finnst ekki
-     */
+    
     public void borrowBook(User user, Book book) throws UserOrBookDoesNotExistException {
         if (!users.contains(user) || !books.contains(book)) {
             throw new UserOrBookDoesNotExistException("User or book does not exist in the library system");
@@ -115,13 +80,7 @@ public class LibrarySystem {
         lendings.add(new Lending(book, user));
     }
     
-    /**
-     * Aðferð sem lengir útlán á bók
-     * @param facultyMember
-     * @param book
-     * @param newDueDate
-     * @throws UserOrBookDoesNotExistException ef notandi eða bók finnst ekki
-     */
+
     public void extendLending(FacultyMember facultyMember, Book book, LocalDate newDueDate) throws UserOrBookDoesNotExistException {
         Lending lending = findLending(facultyMember, book);
         if (lending != null) {
@@ -131,12 +90,7 @@ public class LibrarySystem {
         }
     }
 
-    /**
-     * Aðferð sem skilar bók
-     * @param user
-     * @param book
-     * @throws UserOrBookDoesNotExistException ef notandi eða bók finnst ekki
-     */
+  
     public void returnBook(User user, Book book) throws UserOrBookDoesNotExistException {
         Lending lending = findLending(user, book);
         if (lending != null) {
@@ -146,13 +100,6 @@ public class LibrarySystem {
         }
     }
 
-    // Helper method to find lending by user and book
-    /**
-     * Aðferð sem finnur hvaða notandi er með hvaða bók í láni
-     * @param user
-     * @param book
-     * @return lending
-     */
     public Lending findLending(User user, Book book) {
         for (Lending lending : lendings) {
             if (lending.getUser().equals(user) && lending.getBook().equals(book)) {
