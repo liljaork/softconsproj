@@ -28,14 +28,19 @@ public class BookTest {
     public void testAddNullAuthor() {
         book.addAuthor(null);
     }
-
-    @Test(expected = IllegalArgumentException.class)
+    
+    // TODO - þarf að hafa sér klasa? eða má ég bara bæta við Book.java?
+    @Test
     public void testSetNullAuthorsList() {
-        book.setAuthors(null);
+        assertThrows(EmptyAuthorListException.class, () -> {
+            book.setAuthors(null);
+        });
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test
     public void testCreateBookWithNullTitle() {
-        new Book(null, "Author");
+        assertThrows(IllegalArgumentException.class, () -> {
+            new Book(null, "Author");
+        });
     }
 }

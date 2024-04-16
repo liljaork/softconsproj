@@ -9,14 +9,26 @@ public class LibrarySystem {
     private List<User> users;
     private List<Lending> lendings;
 
-    /**
-     * Smiður
-     */
+    // Getterar og smiður
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
+
+    public List<Lending> getLendings() {
+        return lendings;
+    }
+
     public LibrarySystem() {
         this.books = new ArrayList<>();
         this.users = new ArrayList<>();
         this.lendings = new ArrayList<>();
     }
+
+    // Aðferðir
 
     /**
      * Aðferð sem bætir nýrri bók með title og authorName við listann books

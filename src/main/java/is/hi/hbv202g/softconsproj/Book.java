@@ -13,6 +13,9 @@ public class Book implements LibraryItem {
     }
     
     public Book(String title, String authorName) {
+        if (title == null) {
+            throw new IllegalArgumentException("Title cannot be null");
+        }
         this.title = title;
         this.authors = new ArrayList<>();
         this.authors.add(new Author(authorName));
@@ -32,13 +35,19 @@ public class Book implements LibraryItem {
     }
 
     public void setAuthors(List<Author> authors) throws EmptyAuthorListException {
-        if (authors == null || authors.isEmpty()) {
+        if (authors == null) {
+            throw new EmptyAuthorListException("Author list cannot be null");
+        }
+        if (authors.isEmpty()) {
             throw new EmptyAuthorListException("Author list cannot be empty");
         }
         this.authors = authors;
     }
 
     public void addAuthor(Author author) {
+        if (author == null) {
+            throw new IllegalArgumentException("Author cannot be null");
+        }
         this.authors.add(author);
     }
 

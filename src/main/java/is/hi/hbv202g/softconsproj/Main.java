@@ -21,22 +21,24 @@ public class Main
         Book lordOfTheRings5 = new Book();
         Book lordOfTheRings6 = new Book();
         
-        Omnibus omnibus = new Omnibus();
+        Omnibus harryPotterCollection = new Omnibus();
+        Omnibus lordOfTheRingsCollection = new Omnibus();
 
-        omnibus.add(harryPotter1);
-        omnibus.add(harryPotter2);
-        omnibus.add(harryPotter3);
-        omnibus.add(harryPotter4);
-        omnibus.add(harryPotter5);
-        omnibus.add(harryPotter6);
-        omnibus.add(harryPotter7);
-        omnibus.add(lordOfTheRings1);
-        omnibus.add(lordOfTheRings2);
-        omnibus.add(lordOfTheRings3);
-        omnibus.add(lordOfTheRings4);
-        omnibus.add(lordOfTheRings5);
-        omnibus.add(lordOfTheRings6);
-        omnibus.clean();
+        harryPotterCollection.add(harryPotter1);
+        harryPotterCollection.add(harryPotter2);
+        harryPotterCollection.add(harryPotter3);
+        harryPotterCollection.add(harryPotter4);
+        harryPotterCollection.add(harryPotter5);
+        harryPotterCollection.add(harryPotter6);
+        harryPotterCollection.add(harryPotter7);
+        lordOfTheRingsCollection.add(lordOfTheRings1);
+        lordOfTheRingsCollection.add(lordOfTheRings2);
+        lordOfTheRingsCollection.add(lordOfTheRings3);
+        lordOfTheRingsCollection.add(lordOfTheRings4);
+        lordOfTheRingsCollection.add(lordOfTheRings5);
+        lordOfTheRingsCollection.add(lordOfTheRings6);
+        harryPotterCollection.clean();
+        lordOfTheRingsCollection.clean();
         
     }
 }
