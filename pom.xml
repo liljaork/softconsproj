@@ -16,6 +16,10 @@
             <url>LICENSE</url>
         </license>
     </licenses>
+    <organization>
+        <name>Háskóli íslands</name>
+        <url>https://www.hi.is</url>
+    </organization>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
