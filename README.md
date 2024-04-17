@@ -30,7 +30,7 @@ Both the implementation and the tests are in the package `is.hi.hbv202g.softcons
 ## Design inforfmation
 This project uses the composite design pattern. The interface is called `LibraryItem` and then we have to classes that implement the interface and those classes are called `Book` and `Omnibus`.
 
-## Supported Maven goals
+## Building
 - `mvn compile` compiles all the implementation classes.
 - `mvn test` runs all the test cases.
 - `mvn exec:java` executes the main method of the implementation.

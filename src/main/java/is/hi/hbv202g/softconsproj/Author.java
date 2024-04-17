@@ -1,8 +1,7 @@
 package is.hi.hbv202g.softconsproj;
 
 public class Author {
-
-    //Tilviksbreyta
+    //Instance variable
     private String name;
 
     /**

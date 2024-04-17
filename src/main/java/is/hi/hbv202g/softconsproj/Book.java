@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book implements LibraryItem {
-    //Tilviksbreytur
+    //Instance variables
     private String title;
     private List<Author> authors;
     private boolean cleaning;
 
     /**
-     * Default constructor. Creates a book with no title or author.
+     * Default constructor. 
      */
     public Book() {
     }
