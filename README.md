@@ -22,11 +22,21 @@ Both the implementation and the tests are in the package `is.hi.hbv202g.softcons
     - `is.hi.hbv202g.softconsproj.UserAlreadyExistsException`: The `UserAlreadyExistsException` class is a custom exception that is used within the library management system to handle scenarios where an attempt is made to add a user that already exists in the system's database. 
     - `is.hi.hbv202g.softconsproj.UserOrBookDoesNotExistException`: The `UserOrBookDoesNotExistException` class is a custom exception used within the library management system to handle error conditions when a requested user or book cannot be found in the system. 
 - `src/test/java`:
-    - `is.hi.hbv202g.softconsproj.BookTest`: 
-
-
-
+    - `is.hi.hbv202g.softconsproj.BookTest`: The `BookTest` class provides comprehensive unit tests for the `Book` class in the library management system. It ensures that the `Book` class functions correctly across various scenarios, from creating books to managing authors. 
+    - `is.hi.hbv202g.softconsproj.LibrarySystemTest`: The `LibrarySystemTest` class tests the functionality of the LibrarySystem class, ensuring that all aspects of the library management system operate as expected. 
+    - `is.hi.hbv202g.softconsproj.MainTest`: The `MainTest` class tests the foundational aspects of the library management system, primarily focusing on the ability to instantiate key components of the system.
+    - `is.hi.hbv202g.softconsproj.StudentTest`: The `StudentTest` class is dedicated to verifying the functionality related to the Student class within the library management system.
 
 ## Design inforfmation
-í þessu verkefni er notast við coposite desgin pattern. Við erum með interface sem kallast LibraryItem og svo tvo klasa sem implementa interface-ið og þeir heita Book og Omnibus
+This project uses the composite design pattern. The interface is called `LibraryItem` and then we have to classes that implement the interface and those classes are called `Book` and `Omnibus`.
+
+## Supported Maven goals
+- `mvn compile` compiles all the implementation classes.
+- `mvn test` runs all the test cases.
+- `mvn exec:java` executes the main method of the implementation.
+
+## License
+
+[MIT license info](LICENSE)
+
 

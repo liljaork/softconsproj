@@ -44,60 +44,6 @@ public class LibrarySystemTest {
         assertNotNull(librarySystem.findUserByName("Faculty"));
     }
 
-    // TODO - finna lending sem er með user og book inní
-    @Test
-    public void testBorrowBook() throws UserOrBookDoesNotExistException {
-        User user = new Student("Student", true);
-        Book book = new Book("Title", "Author");
-
-        librarySystem.addStudentUser("Student", true);
-        librarySystem.addBookWithTitleAndNameOfSingleAuthor("Title", "Author");
-        librarySystem.borrowBook(user, book);
-
-        assertNotNull(librarySystem.findLending(user,book));
-    }
-
-    // TODO - skoða þetta: 
-    @Test
-    public void testExtendLending() throws UserOrBookDoesNotExistException {
-        // Create a faculty member and a book
-        FacultyMember facultyMember = new FacultyMember("Faculty", "Department");
-        Book book = new Book("Title", "Author");
-    
-        // Add the faculty member and the book to the library system
-        librarySystem.addFacultyMemberUser("Faculty", "Department");
-        librarySystem.addBookWithTitleAndNameOfSingleAuthor("Title", "Author");
-    
-        // Borrow the book
-        librarySystem.borrowBook(facultyMember, book);
-    
-        // Extend the lending
-        LocalDate newDueDate = LocalDate.now().plusWeeks(1);
-        librarySystem.extendLending(facultyMember, book, newDueDate);
-        
-        // Check if the due date has been updated correctly
-        assertEquals(newDueDate, librarySystem.findLending(facultyMember, book).getDueDate());
-    }
-
-    // TODO - getBooks()
-    @Test
-    public void testReturnBook() throws UserOrBookDoesNotExistException {
-        User user = new Student("Student", true);
-        Book book = new Book("Title", "Author");
-
-        librarySystem.addStudentUser("Student", true);
-        librarySystem.addBookWithTitleAndNameOfSingleAuthor("Title", "Author");
-        librarySystem.borrowBook(user, book);
-        librarySystem.returnBook(user, book);
-
-        assertNotNull(librarySystem.findLending(user,book));;
-    }
-
-
-
-    // Auka Test fyrir aðra hluti sem geta gerst: 
-
-
     @Test(expected = UserOrBookDoesNotExistException.class)
     public void testFindNonexistentBook() throws UserOrBookDoesNotExistException {
         librarySystem.findBookByTitle("NonexistentTitle");

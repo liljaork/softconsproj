@@ -27,7 +27,6 @@ public class StudentTest {
         assertFalse(studentUnpaid.isFeePaid());
     }
 
-    // breytir gildi Jónu í True og athugar hvort það virkar
     @Test
     public void testSetFeePaid() {
         studentUnpaid.setFeePaid(true);
