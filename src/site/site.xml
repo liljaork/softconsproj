@@ -1,0 +1,8 @@
+<projects>
+    <body>
+        <menu name = "Overview">
+            <item name="Design documentation" href="design.html" /> 
+        </menu>
+        <menu ref="reports" />
+    </body>
+</projects>
